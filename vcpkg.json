@@ -1,0 +1,9 @@
+{
+    "name": "raycaster-dep",
+    "version": "0.0.1",
+    "dependencies": [
+        {
+            "name": "freeglut"
+        }
+    ]
+}

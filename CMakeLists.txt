@@ -1,17 +1,20 @@
-# CMakeLists.txt
+cmake_minimum_required(VERSION 3.12)
+project(RayCaster VERSION 0.0.1 LANGUAGES C)
 
-cmake_minimum_required(VERSION 3.10)
-project(RayCaster)
+# Find GLUT package
+find_package(GLUT REQUIRED)
 
-# Add your source files
-set(SOURCE_FILES
+# Find OpenGL package
+find_package(OpenGL REQUIRED)
+
+# Set source files for your project
+set(SOURCES
     src/main.c
+    # Add other source files if needed
 )
+
 # Add executable target
-add_executable(raycaster ${SOURCE_FILES})
-# Find SDL2
-find_package(SDL2 REQUIRED)
-# Include SDL2 headers
-include_directories(${SDL2_INCLUDE_DIRS})
-# Link against SDL2
-target_link_libraries(raycaster ${SDL2_LIBRARIES})
+add_executable(RayCaster ${SOURCES})
+
+# Link libraries
+target_link_libraries(RayCaster PRIVATE  GLUT::GLUT)
